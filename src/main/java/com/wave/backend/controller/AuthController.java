@@ -11,18 +11,15 @@ import com.wave.backend.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 @RestController
-@RequestMapping("/users") // Base route, ex: /users/register
+@RequestMapping("/users")
 public class AuthController {
 
     private final UserService userService;
-    private final UserRepository userRepository;
     private final OtpCodeService otpService;
 
-    public AuthController(UserService userService, UserRepository userRepository, OtpCodeService otpService) {
+    public AuthController(UserService userService, OtpCodeService otpService) {
         this.userService = userService;
-        this.userRepository = userRepository;
         this.otpService = otpService;
     }
 
@@ -34,38 +31,24 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
-        boolean isValidOtp = otpService.verifyOtp(userDTO.getNumero(), userDTO.getOtpCode());
+        String result = userService.register(userDTO);
 
-        if (!isValidOtp) {
-            return ResponseEntity.badRequest().body("OTP invalide ou expiré.");
+        if (result.equals("Utilisateur inscrit avec succès !")) {
+            return ResponseEntity.ok(result);
+        } else {
+            return ResponseEntity.badRequest().body(result);
         }
-
-        if (userRepository.existsByNumero(userDTO.getNumero())) {
-            return ResponseEntity.badRequest().body("Ce numéro est déjà enregistré.");
-        }
-
-        User user = new User();
-        user.setNumero(userDTO.getNumero());
-        user.setNom(userDTO.getNom());
-        user.setMdp(userDTO.getMotDePasse());
-
-        userRepository.save(user);
-        otpService.clearOtp(user.getNumero());
-
-        return ResponseEntity.ok("Utilisateur inscrit avec succès !");
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody Login login) {
         User user = userService.connecter(login);
 
         if (user != null) {
-            return ResponseEntity.ok(user); // Pour le moment, on retourne l'utilisateur
+            return ResponseEntity.ok(user); // Ici plus tard, tu pourras retourner un token JWT
         } else {
-            return ResponseEntity
-                    .status(401)
-                    .body("Identifiants invalides");
+            return ResponseEntity.status(401).body("Identifiants invalides");
         }
     }
-
 }

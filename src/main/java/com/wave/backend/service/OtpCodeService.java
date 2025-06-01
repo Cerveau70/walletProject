@@ -23,6 +23,8 @@ public class OtpCodeService{
 
     // Envoyer l’OTP à l’utilisateur (via console ici pour test)
     public String sendOtp(String numero) {
+        otpCodeRepository.findByNumero(numero).ifPresent(otpCodeRepository::delete);
+
         String otp = generateOtp();
         OtpCode otpCode = new OtpCode();
         otpCode.setNumero(numero);
@@ -30,12 +32,10 @@ public class OtpCodeService{
         otpCode.setCreatedAt(System.currentTimeMillis());
 
         otpCodeRepository.save(otpCode);
-
-        // Simuler l’envoi
         System.out.println("OTP pour " + numero + ": " + otp);
-
         return otp;
     }
+
 
     // Vérifier que l’OTP est correct et non expiré
     public boolean verifyOtp(String numero, String code) {
