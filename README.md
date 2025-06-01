@@ -2,7 +2,7 @@
 
 ## -- Projet école walletProject
 
-![wave wallet](https://play.google.com/store/apps/details/Wave_Mobile_Money?id=com.wave.personal&hl=ln)
+![images](https://github.com/user-attachments/assets/566b9cf3-56d5-49a9-bce4-aae2c7f8fb25)
 
 ![GitHub repo clones](https://img.shields.io/badge/clones-16-blue?logo=github)
 ![GitHub visitors](https://img.shields.io/badge/visiteurs-1-9cf?logo=github)
