@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+echo ".DS_Store" >> .gitignore
+git add .gitignore
+git commit -m "chore: ignore .DS_Store file"
+
