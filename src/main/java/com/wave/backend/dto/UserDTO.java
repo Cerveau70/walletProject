@@ -47,5 +47,4 @@ public class UserDTO {
         this.otpCode = otpCode;
     }
 
-    // Getters et Setters
 }
