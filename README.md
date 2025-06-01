@@ -32,6 +32,21 @@ Test des APIs avec swaggers: http://localhost:8080/swagger-ui/index.html#/
 ![Capture d’écran 2025-06-01 à 04 32 34](https://github.com/user-attachments/assets/ca07d443-bc34-4c7b-8b0b-02129ef07b00)
 
 
+## creation d'image docker pour notre projet
+
+pour facilter l'execution au lieu de lancer postgresql, et lancer l'appli , docker facilite le processus
+
+### image docker creer+img postgres(version 15 stable meme si en local j'utilise la 17)
+![Capture d’écran 2025-06-01 à 05 41 19](https://github.com/user-attachments/assets/2246479a-9fe1-4709-964b-778070ce9359)
+
+### conteneur
+![Capture d’écran 2025-06-01 à 05 41 12](https://github.com/user-attachments/assets/1df5965a-9dd2-4a45-8909-d21e3507d819)
+
+
+
+
+
+
 ## Réaliser par @Alloma JL, @Coulibaly L, @Akmel JE, @Hallage Y, @Houphouet D, @Amani A
 
 
