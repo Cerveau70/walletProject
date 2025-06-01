@@ -32,7 +32,7 @@ Test des APIs avec swaggers: http://localhost:8080/swagger-ui/index.html#/
 ![Capture d’écran 2025-06-01 à 04 32 34](https://github.com/user-attachments/assets/ca07d443-bc34-4c7b-8b0b-02129ef07b00)
 
 
-
+## Réaliser par @Alloma JL, @Coulibaly L, @Akmel JE, @Hallage Y, @Houphouet D, @Amani A
 
 
 
