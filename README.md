@@ -2,7 +2,7 @@
 
 ## -- Projet école walletProject
 
-![walletProject](https://github.com/user-attachments/assets/455348c8-e7f9-42ce-8fb6-4e2f6a2008ea)
+![wave wallet](https://github.com/Cerveau70/walletProject/raw/main/assets/wave-wallet.png)
 
 ![GitHub repo clones](https://img.shields.io/badge/clones-16-blue?logo=github)
 ![GitHub visitors](https://img.shields.io/badge/visiteurs-1-9cf?logo=github)
